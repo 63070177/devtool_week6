@@ -14,10 +14,23 @@ pipeline {
                 sh 'python3  Webhook/main.py'
             }
         }
+        stage('test1') {
+            steps {
+                echo 'test1 in progress'
+            }
+        }
+        stage('test2'){
+            steps {
+                echo 'test2 in progress'
+            }
+        }
     }
     post{
       always{
          echo 'Last Order!!!'
       }
+      success {
+        echo 'run succeessfully'
+    }
     }
 }
